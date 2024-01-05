@@ -8,7 +8,7 @@ def menu_principal():
     print(colorama.Fore.MAGENTA + "1 - Rechercher dans la bibliothèque")
     print("2 - Ajouter un ouvrage à la bibliothèque")
     print("3 - Supprimer un ouvrage de la bibliothèque")
-    print("4 - Afficher les statistiques de la bibliothèque et quitter")
+    print("4 - Afficher les statistiques de la bibliothèque")
     print("5 - Quitter" + colorama.Style.RESET_ALL)
     while True :
         choix_input = input(colorama.Fore.YELLOW + "Entrez le numéro de l'action choisie : " + colorama.Style.RESET_ALL)
@@ -164,7 +164,7 @@ def options_stats() :
     print(colorama.Fore.YELLOW + "Souhaitez-vous afficher ?" + colorama.Style.RESET_ALL)  
     print(colorama.Fore.MAGENTA + "1 - des statistiques basiques")
     print("2 - des statistiques détaillées")
-    print("3 - Quitter" + colorama.Style.RESET_ALL)
+    print("3 - Revenir au menu précédent" + colorama.Style.RESET_ALL)
     while True :
         choix_stats_input = input(colorama.Fore.YELLOW + "Entrez le numéro de l'action choisie : " + colorama.Style.RESET_ALL)
         if choix_stats_input.isdigit() == True and (int(choix_stats_input) > 0 and int(choix_stats_input) <= 3) :

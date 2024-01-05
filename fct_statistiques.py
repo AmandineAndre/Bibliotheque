@@ -1,8 +1,3 @@
-#A afficher : 
-# - nombre de publications par auteur
-# - liste des auteurs les plus prolifiques
-# - etc
-
 import colorama
 import math
 
@@ -72,8 +67,6 @@ def annees_prolifiques(coll,nb_affiche) :
         print(colorama.Fore.CYAN + "Année : " + colorama.Fore.YELLOW + f"{resultat_annee}" + colorama.Fore.CYAN + ", Nombres de publications : " + colorama.Fore.YELLOW + f"{resultat_nb}" + colorama.Style.RESET_ALL)
   
 
-
- 
 #On fait une fonction pour afficher la moyenne de publications par année
 def moyenne_annee(coll) :
     #On liste les années
@@ -95,6 +88,7 @@ def moyenne_auteur(coll) :
     #On fait la moyenne
     moyenne = int(math.ceil(count / nb_auteur))
     print(colorama.Fore.CYAN + "Nombre de publications moyennes par auteur : " + colorama.Fore.MAGENTA + f"{moyenne}" + colorama.Style.RESET_ALL)
+
 
 #On fait une fonction pour déterminer le nombre d'affichages par page
 def limite_top() :

@@ -9,13 +9,13 @@ def rechercher_auteur() :
             auteur = auteur_input
             break
         else :
-            print(colorama.Fore.RED + "Veuillez reformuler votre demande - Le nom de l'auteur ne doit comporter pas comporter de caractères spéciaux, que des lettres" + colorama.Style.RESET_ALL)
+            print(colorama.Fore.RED + "Veuillez reformuler votre demande - Le nom de l'auteur ne doit pas comporter de caractères spéciaux, que des lettres" + colorama.Style.RESET_ALL)
     return auteur
 
 #On fait une fonction pour rechercher par titre
 def rechercher_titre() :
     while True :
-        titre_input = input(colorama.Fore.YELLOW + "Entrez le titre de l'ouvrage : " + colorama.Style.RESET_ALL)
+        titre_input = input(colorama.Fore.YELLOW + "Entrez le titre de l'ouvrage : " + colorama.Style.RESET_ALL).capitalize()
         if len(titre_input) >= 3 :
             titre = titre_input
             break

@@ -2,7 +2,7 @@
 from pymongo import MongoClient
 client = MongoClient("mongodb://localhost:27017")
 db = client["my-first-db"]
-coll = db['book']
+coll = db['books_projet']
 import pprint
 
 import colorama
@@ -21,7 +21,7 @@ import colorama
 # for item in coll.aggregate([{"$unwind":"$authors"},{"$group":{"_id":"$authors","nb":{"$sum":1}}},{"$sort":{"_id":1}}]) :
 #     pprint.pprint(item)
 
-cursor = coll.aggregate([{"$group":{"_id":"$year","moyenne":{"$avg":1}}}])
+cursor = coll.aggregate([{"$group":{"_id":"$year","nb":{"$sum":1}}},{"$group":{"_id":"ttt","moyenne":{"$avg":"$nb"}}}])
 results = list(cursor)
 
 total_liste = len(results)
