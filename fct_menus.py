@@ -174,6 +174,26 @@ def options_stats() :
             print (colorama.Fore.RED + "Veuillez reformuler votre demande - en insérant un chiffre allant de 1 à 3" + colorama.Style.RESET_ALL) 
     return choix_stats
 
+#On fait une fonction pour déterminer ce qu'on affiche en statistiques détaillées
+def stats_detaillees_choix() :
+    print(f"\n" + colorama.Fore.MAGENTA + colorama.Back.WHITE + "-------------------------------" + colorama.Style.RESET_ALL)
+    print(colorama.Fore.YELLOW + "Souhaitez-vous afficher ?" + colorama.Style.RESET_ALL)  
+    print(colorama.Fore.MAGENTA + "1 - le nombre de publications par année")
+    print("2 - le nombre de publications par type")
+    print("3 - un TOP des auteurs les plus prolifiques")
+    print("4 - un TOP des années les plus prolifiques")
+    print("5 - la liste totale du nombre de publications par auteur")
+    print("6 - Revenir au menu précédent" + colorama.Style.RESET_ALL)
+    while True :
+        choix_detaille_input = input(colorama.Fore.YELLOW + "Entrez le numéro de l'action choisie : " + colorama.Style.RESET_ALL)
+        if choix_detaille_input.isdigit() == True and (int(choix_detaille_input) > 0 and int(choix_detaille_input) <= 6) :
+            choix_detaille = int(choix_detaille_input)
+            break
+        else :
+            print (colorama.Fore.RED + "Veuillez reformuler votre demande - en insérant un chiffre allant de 1 à 6" + colorama.Style.RESET_ALL) 
+    return choix_detaille
+
+
 
     
     

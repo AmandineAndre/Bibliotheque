@@ -207,12 +207,31 @@ while True :
                 print(colorama.Fore.CYAN + "-------------------------------" + colorama.Style.RESET_ALL)
                 nb_publi(coll)
                 moyenne_annee(coll)
-                moyenne_auteur(coll)
+                moyenne_auteur(coll) 
             elif choix_stats == 2 : #statistiques détaillées
-                nb_publi_annee(coll)
-            elif choix_stats == 3 : #Quitter
+                while True :
+                    choix_detaille = stats_detaillees_choix()
+                    if choix_detaille == 1 : #le nb de publications par année
+                        print(colorama.Fore.CYAN + "-------------------------------" + colorama.Style.RESET_ALL)
+                        nb_publi_annee_agg(coll)
+                    elif choix_detaille == 2 : #le nb de publications par type
+                        print(colorama.Fore.CYAN + "-------------------------------" + colorama.Style.RESET_ALL)
+                        nb_publi_type_agg(coll)
+                    elif choix_detaille == 3 : #le top des auteurs prolifiques
+                        nb_affiche = limite_top()
+                        print(colorama.Fore.CYAN + "-------------------------------" + colorama.Style.RESET_ALL)
+                        auteurs_prolifiques(coll,nb_affiche)
+                    elif choix_detaille == 4 : #le top des années prolifiques
+                        nb_affiche = limite_top()
+                        print(colorama.Fore.CYAN + "-------------------------------" + colorama.Style.RESET_ALL)
+                        annees_prolifiques(coll,nb_affiche)
+                    elif choix_detaille == 5 : #le nb de publications par auteur
+                        print(colorama.Fore.CYAN + "-------------------------------" + colorama.Style.RESET_ALL)
+                        nb_publi_auteur_agg(coll)
+                    elif choix_detaille == 6 : #On revient au menu précédent
+                        break
+            elif choix_stats == 3 : #Revenir au menu précédent
                 print(colorama.Fore.YELLOW + "~~~~ Merci de votre attention ~~~~" + colorama.Style.RESET_ALL)
-                print(colorama.Fore.RED + "A" + " " + colorama.Fore.YELLOW + "b" + colorama.Fore.GREEN + "i" + colorama.Fore.BLUE + "e" + colorama.Fore.MAGENTA + "n" + colorama.Fore.BLUE + "t" + colorama.Fore.GREEN + "ô" + colorama.Fore.YELLOW + "t" + " " + colorama.Fore.RED + "!" + colorama.Style.RESET_ALL)
                 break
     elif choix_menu_principal == 5 : #On quitte
         print(colorama.Fore.RED + "A" + " " + colorama.Fore.YELLOW + "b" + colorama.Fore.GREEN + "i" + colorama.Fore.BLUE + "e" + colorama.Fore.MAGENTA + "n" + colorama.Fore.BLUE + "t" + colorama.Fore.GREEN + "ô" + colorama.Fore.YELLOW + "t" + " " + colorama.Fore.RED + "!" + colorama.Style.RESET_ALL)

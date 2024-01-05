@@ -5,6 +5,8 @@ db = client["my-first-db"]
 coll = db['book']
 import pprint
 
+import colorama
+
 # count = coll.count_documents({})
 # print(count)
 # #auteur = "Surendra Dayal"
@@ -14,10 +16,21 @@ import pprint
 # for item in coll.distinct("year") :
 #     pprint.pprint(item)
 
-print(len(coll.distinct("authors")))
+#print(len(coll.distinct("authors")))
     
-    
+# for item in coll.aggregate([{"$unwind":"$authors"},{"$group":{"_id":"$authors","nb":{"$sum":1}}},{"$sort":{"_id":1}}]) :
+#     pprint.pprint(item)
 
+cursor = coll.aggregate([{"$group":{"_id":"$year","moyenne":{"$avg":1}}}])
+results = list(cursor)
+
+total_liste = len(results)
+                
+for i in range(total_liste):
+    resultat = results[i] 
+    resultat_moyenne = resultat['moyenne']
+    print(colorama.Fore.YELLOW + "Le nombre moyen de publication annuelle est : " + colorama.Fore.CYAN + f"{resultat_moyenne}" + colorama.Style.RESET_ALL)
+    print("-------------------------------" + colorama.Style.RESET_ALL)
 
 
 # import colorama
